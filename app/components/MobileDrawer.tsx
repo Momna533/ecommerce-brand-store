@@ -1,9 +1,12 @@
 import { CgClose } from "react-icons/cg";
 import { FaUser } from "react-icons/fa6";
 import Link from "next/link";
-import { useState } from "react";
+import { useAtom } from "jotai";
+import { mobileDrawerAtom } from "@/atoms";
 
-const MobileDrawer = ({ mobileDrawerOpen, setMobileDrawerOpen }) => {
+const MobileDrawer = () => {
+  const [mobileDrawerOpen, setMobileDrawerOpen] = useAtom(mobileDrawerAtom);
+
   return (
     <div className={`mobile__drawer ${mobileDrawerOpen ? "active" : ""}`}>
       <button

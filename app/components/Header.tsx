@@ -1,6 +1,6 @@
 "use client";
 
-import { FC, useState } from "react";
+import { FC } from "react";
 import Link from "next/link";
 import logo from "../images/logo@2x-free-img.png";
 import { FaCartShopping, FaUser } from "react-icons/fa6";
@@ -8,10 +8,12 @@ import MobileHeader from "./MobileHeader";
 import Image from "next/image";
 import MobileDrawer from "./MobileDrawer";
 import CartDrawer from "./CartDrawer";
+import { cartDrawerAtom, mobileDrawerAtom } from "@/atoms";
+import { useAtom } from "jotai";
 
 const Header: FC = () => {
-  const [cartDrawerOpen, setCartDrawerOpen] = useState(false);
-  const [mobileDrawerOpen, setMobileDrawerOpen] = useState(false);
+  const [cartDrawerOpen, setCartDrawerOpen] = useAtom(cartDrawerAtom);
+  const [mobileDrawerOpen, setMobileDrawerOpen] = useAtom(mobileDrawerAtom);
 
   return (
     <>

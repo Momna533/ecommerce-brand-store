@@ -3,14 +3,18 @@
 import { FC, useState } from "react";
 import PrimaryBtn from "./PrimaryBtn";
 import { CgClose } from "react-icons/cg";
+import { useAtom } from "jotai";
+import { cartDrawerAtom } from "@/atoms";
 
-const CartDrawer: FC = ({ cartDrawerOpen, setCartDrawerOpen }) => {
+const CartDrawer: FC = () => {
+  const [cartDrawerOpen, setCartDrawerOpen] = useAtom(cartDrawerAtom);
   const [cart, setCart] = useState([]);
   const [productAmount, setProductAmount] = useState(1);
   const [totalPrice, setTotalPrice] = useState(0);
   const addToCart = (product) => {};
   const removeFromCart = (productId) => {};
   const updateProductAmount = (productId, newAmount) => {};
+
   return (
     <div className={`cart__drawer__overlay ${cartDrawerOpen ? "active" : ""}`}>
       <div className={`cart__drawer ${cartDrawerOpen ? "active" : ""}`}>

@@ -1,19 +1,17 @@
 "use client";
 
-import { FC, useState } from "react";
+import { FC } from "react";
 import Link from "next/link";
 import logo from "@/app/images/logo1-free-img.png";
 import { FaCartShopping, FaUser } from "react-icons/fa6";
 import MobileHeader from "./MobileHeader";
 import Image from "next/image";
 import CartDrawer from "./CartDrawer";
+import { cartDrawerAtom, mobileDrawerAtom } from "@/atoms";
+import { useAtom } from "jotai";
 
-const HomeHeader: FC = ({
-  cartDrawerOpen,
-  setCartDrawerOpen,
-  mobileDrawerOpen,
-  setMobileDrawerOpen,
-}) => {
+const HomeHeader: FC = () => {
+  const [cartDrawerOpen, setCartDrawerOpen] = useAtom(cartDrawerAtom);
   return (
     <>
       <div className="home__header">
@@ -63,16 +61,8 @@ const HomeHeader: FC = ({
           </div>
         </div>
       </div>
-      <MobileHeader
-        cartDrawerOpen={cartDrawerOpen}
-        setCartDrawerOpen={setCartDrawerOpen}
-        mobileDrawerOpen={mobileDrawerOpen}
-        setMobileDrawerOpen={setMobileDrawerOpen}
-      />
-      <CartDrawer
-        cartDrawerOpen={cartDrawerOpen}
-        setCartDrawerOpen={setCartDrawerOpen}
-      />
+      <MobileHeader />
+      {cartDrawerOpen && <CartDrawer />}
     </>
   );
 };

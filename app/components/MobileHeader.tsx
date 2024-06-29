@@ -2,16 +2,18 @@
 
 import Link from "next/link";
 import logo from "@/app/images/logo@2x-free-img.png";
-import { FaCartShopping, FaUser } from "react-icons/fa6";
+import { FaCartShopping } from "react-icons/fa6";
 import { FaHamburger } from "react-icons/fa";
-import { CgClose } from "react-icons/cg";
 import MobileDrawer from "./MobileDrawer";
-import { useState } from "react";
 import Image from "next/image";
 import CartDrawer from "@/app/components/CartDrawer";
+import { useAtom } from "jotai";
+import { cartDrawerAtom, mobileDrawerAtom } from "@/atoms";
+
 const Header = () => {
-  const [cartDrawerOpen, setCartDrawerOpen] = useState(false);
-  const [mobileDrawerOpen, setMobileDrawerOpen] = useState(false);
+  const [cartDrawerOpen, setCartDrawerOpen] = useAtom(cartDrawerAtom);
+  const [mobileDrawerOpen, setMobileDrawerOpen] = useAtom(mobileDrawerAtom);
+
   return (
     <>
       <div className="mobile__header">
@@ -22,10 +24,7 @@ const Header = () => {
           <div className="mobile__header__primary__section">
             <button
               className="mobile__header__nav__link mobile__header__cart__link"
-              onClick={() => {
-                console.log("a");
-                setCartDrawerOpen(true);
-              }}
+              onClick={() => setCartDrawerOpen(true)}
             >
               <div className="cart__amount">$0.00</div>
               <FaCartShopping className="cart__icon" />
@@ -33,7 +32,6 @@ const Header = () => {
             <button
               className="menu__btn"
               onClick={() => {
-                console.log("b");
                 setMobileDrawerOpen(true);
               }}
             >
@@ -42,18 +40,8 @@ const Header = () => {
           </div>
         </div>
       </div>
-      {mobileDrawerOpen && (
-        <MobileDrawer
-          mobileDrawerOpen={mobileDrawerOpen}
-          setMobileDrawerOpen={setMobileDrawerOpen}
-        />
-      )}
-      {cartDrawerOpen && (
-        <CartDrawer
-          cartDrawerOpen={cartDrawerOpen}
-          setCartDrawerOpen={setCartDrawerOpen}
-        />
-      )}
+      {mobileDrawerOpen && <MobileDrawer />}
+      {cartDrawerOpen && <CartDrawer />}
     </>
   );
 };
