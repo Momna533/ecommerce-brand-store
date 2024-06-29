@@ -7,7 +7,7 @@ const Pagination = () => {
       <button>2</button>
       <button>3</button>
       <button>
-        <FaArrowRight />
+        <FaArrowRight className="arrow__next__icon" />
       </button>
     </div>
   );

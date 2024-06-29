@@ -1,4 +1,7 @@
+import Image from "next/image";
+import Link from "next/link";
 import { FaChevronRight } from "react-icons/fa6";
+import avatarImg from "@/app/images/product-accessory1-300x300.jpg";
 
 const FiltersContainer = () => {
   return (
@@ -13,16 +16,22 @@ const FiltersContainer = () => {
         <h3>Categories</h3>
         <ul>
           <li>
-            <span>Accessories</span>
-            <span>(7)</span>
+            <Link href={"accessories"}>
+              <span>Accessories</span>
+              <span>(7)</span>
+            </Link>
           </li>
           <li>
-            <span>Men</span>
-            <span>(14)</span>
+            <Link href={"men"}>
+              <span>Men</span>
+              <span>(14)</span>
+            </Link>
           </li>
           <li>
-            <span>Women</span>
-            <span>(17)</span>
+            <Link href={"women"}>
+              <span>Women</span>
+              <span>(17)</span>
+            </Link>
           </li>
         </ul>
       </div>
@@ -31,7 +40,7 @@ const FiltersContainer = () => {
         <ul>
           <li className="bestSeller__entry">
             <div className="bestSeller__entry__image">
-              <img src={avatarImg} alt="shoe" />
+              <Image src={avatarImg} alt="shoe" />
             </div>
             <div className="bestSeller__enrty__info">
               <h4>shoes</h4>
@@ -41,7 +50,7 @@ const FiltersContainer = () => {
           <div className="divider"></div>
           <li className="bestSeller__entry">
             <div className="bestSeller__entry__image">
-              <img src={avatarImg} alt="shoe" />
+              <Image src={avatarImg} alt="shoe" />
             </div>
             <div className="bestSeller__enrty__info">
               <h4>shoes</h4>

@@ -3,7 +3,6 @@ import Link from "next/link";
 import { FaCartShopping } from "react-icons/fa6";
 
 const FeaturedProduct = ({ id, img, title, price, category }) => {
-  // const { addToCart } = ''();
   return (
     <div className="featured__products__card">
       <Link href={`/product/${title}`}>

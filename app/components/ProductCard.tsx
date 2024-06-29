@@ -3,16 +3,16 @@ import Link from "next/link";
 import productImg from "@/app/images/product-accessory2.jpg";
 import { FaCartShopping } from "react-icons/fa6";
 import Image from "next/image";
-const ProductCard: FC = ({ title, img, category, price }) => {
+const ProductCard: FC = ({ id, title, img, category, price }) => {
   return (
-    <div className="products__card">
-      <Link href={`/product/${title}`}>
+    <div className="featured__products__card products__card">
+      <Link href="/accessories/a">
         <div className="featured__products__card__image">
-          <Image src={img} alt={title} />
+          <Image src={img} alt="product" />
         </div>
       </Link>
       <div className="featured__products__card__content">
-        <Link href={`/product/${title}`}>
+        <Link href="/accessories/a">
           <h4>{title}</h4>
         </Link>
         <p>{category}</p>
@@ -20,7 +20,10 @@ const ProductCard: FC = ({ title, img, category, price }) => {
         <div className="variations"></div>
         <div className="rating"></div>
         <div className="featured__products__card__content__cart">
-          <button className="featured__products__card__content__cart__btn">
+          <button
+            className="featured__products__card__content__cart__btn"
+            // onClick={() => addToCart(id)}
+          >
             <FaCartShopping />
           </button>
         </div>

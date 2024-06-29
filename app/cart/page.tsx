@@ -5,47 +5,55 @@ import shirt from "../assets/sports-shoe1-300x300.jpg";
 import PrimaryBtn from "../components/PrimaryBtn";
 import { CgClose } from "react-icons/cg";
 import { useState } from "react";
+import Footer from "../components/Footer";
+import Header from "../components/Header";
 
 const Page = () => {
   const [cart, setCart] = useState([]);
   return (
-    <div className="cart">
-      <div className="cart__content">
-        <h1>Cart</h1>
-        {/* <div className="cart__item__header"></div> */}
-        {/* <div className="cart__item__heading">
+    <>
+      <Header />
+      <div className="cart">
+        <div className="cart__content">
+          <h1>Cart</h1>
+          {/* <div className="cart__item__header"></div> */}
+          {/* <div className="cart__item__heading">
             <button></button>
             <h4>Product</h4>
             <h4>price</h4>
             <h4>quantity</h4>
             <h4>subtotal</h4>
           </div> */}
-        {cart.length > 0 ? (
-          cart.map((item) => {
-            const { id, title, img, price } = item;
-            return (
-              <div className="cart__item">
-                <button onClick={() => removeFromCart(id)}>
-                  <CgClose />
-                </button>
-                <div className="cart__item__img">
-                  <img src={img} alt={title} />
+          {cart.length > 0 ? (
+            cart.map((item) => {
+              const { id, title, img, price } = item;
+              return (
+                <div className="cart__item">
+                  <button onClick={() => removeFromCart(id)}>
+                    <CgClose />
+                  </button>
+                  <div className="cart__item__img">
+                    <img src={img} alt={title} />
+                  </div>
+                  <h4>{title}</h4>
+                  <p>{price}</p>
+                  <p>amount</p>
+                  <p>subtotal</p>
                 </div>
-                <h4>{title}</h4>
-                <p>{price}</p>
-                <p>amount</p>
-                <p>subtotal</p>
-              </div>
-            );
-          })
-        ) : (
-          <>
-            <h3>Cart is currently empty</h3>
-            <PrimaryBtn varient="link" to="/store" title="continue shopping" />
-          </>
-        )}
+              );
+            })
+          ) : (
+            <>
+              <h3>Cart is currently empty</h3>
+              <PrimaryBtn
+                varient="link"
+                to="/store"
+                title="continue shopping"
+              />
+            </>
+          )}
 
-        {/* <div className="cart__item">
+          {/* <div className="cart__item">
             <div className="cart__item__image">
               <img src={shirt} alt="shirt" />
             </div>
@@ -62,7 +70,7 @@ const Page = () => {
               </div>
             </div>
           </div> */}
-        {/* <div className="cart__collatoral">
+          {/* <div className="cart__collatoral">
           <div className="cart__collatoral__content">
             <h4>Cart Totals</h4>
             <div className="cart__collatoral__subtotal">
@@ -76,8 +84,10 @@ const Page = () => {
             <PrimaryBtn title="checkout" />
           </div>
         </div> */}
+        </div>
       </div>
-    </div>
+      <Footer />
+    </>
   );
 };
 

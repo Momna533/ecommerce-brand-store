@@ -54,10 +54,10 @@ const HomeHeader: FC = ({
                 }}
               >
                 <div className="cart__amount">$0.00</div>
-                <FaCartShopping />
+                <FaCartShopping className="cart__icon" />
               </button>
               <Link className="nav__link home__user__link" href="/">
-                <FaUser />
+                <FaUser className="user__icon" />
               </Link>
             </div>
           </div>

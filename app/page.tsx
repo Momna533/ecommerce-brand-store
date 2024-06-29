@@ -4,8 +4,6 @@ import Hero from "@/app/components/Hero";
 import FeaturedProducts from "@/app/components/FeaturedProducts";
 //images
 import bag1 from "./images/product-bag1-300x300.jpg";
-console.log(bag1);
-
 import bag2 from "./images/product-bag3-300x300.jpg";
 import productMJeans3 from "./images/product-m-jeans3-300x300.jpg";
 import productMJeans4 from "./images/product-m-jeans4-300x300.jpg";
@@ -310,7 +308,6 @@ const Page: FC = () => {
   const [featuredProducts, setFeaturedProducts] = useState(featured);
   const [cartDrawerOpen, setCartDrawerOpen] = useState(false);
   const [mobileDrawerOpen, setMobileDrawerOpen] = useState(false);
-  const [products, setproducts] = useState(data);
 
   return (
     <>

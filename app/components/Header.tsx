@@ -47,14 +47,14 @@ const Header: FC = () => {
                 </Link>
               </div>
               <button
-                className="nav__link cart__link"
+                className="nav__link header__cart__link"
                 onClick={() => setCartDrawerOpen(true)}
               >
                 <div className="cart__amount">$0.00</div>
-                <FaCartShopping />
+                <FaCartShopping className="cart__icon" />
               </button>
               <Link className="nav__link user__link" href="cart">
-                <FaUser />
+                <FaUser className="user__icon" />
               </Link>
             </div>
           </div>

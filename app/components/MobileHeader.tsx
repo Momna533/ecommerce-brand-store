@@ -21,14 +21,14 @@ const Header = () => {
           </Link>
           <div className="mobile__header__primary__section">
             <button
-              className="mobile__header__nav__link cart__link"
+              className="mobile__header__nav__link mobile__header__cart__link"
               onClick={() => {
                 console.log("a");
                 setCartDrawerOpen(true);
               }}
             >
               <div className="cart__amount">$0.00</div>
-              <FaCartShopping />
+              <FaCartShopping className="cart__icon" />
             </button>
             <button
               className="menu__btn"
@@ -37,7 +37,7 @@ const Header = () => {
                 setMobileDrawerOpen(true);
               }}
             >
-              <FaHamburger />
+              <FaHamburger className="menu__icon" />
             </button>
           </div>
         </div>
