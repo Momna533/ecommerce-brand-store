@@ -22,28 +22,16 @@ const HomeHeader: FC = () => {
                 <Image src={logo} alt="logo" />
               </Link>
               <div className="home__nav__links">
-                <Link className="nav__link" href="/store">
-                  Everything
-                </Link>
-                <Link className="nav__link" href="/women">
-                  Women
-                </Link>
-                <Link className="nav__link" href="/men">
-                  Men
-                </Link>
-                <Link className="nav__link" href="/accessories">
-                  Accessories
-                </Link>
+                <Link href="/store">Everything</Link>
+                <Link href="/women">Women</Link>
+                <Link href="/men">Men</Link>
+                <Link href="/accessories">Accessories</Link>
               </div>
             </div>
             <div className="home__header__primary__section">
               <div className="home__nav__menu">
-                <Link className="nav__link" href="/about">
-                  About
-                </Link>
-                <Link className="nav__link" href="/contact">
-                  Contact Us
-                </Link>
+                <Link href="/about">About</Link>
+                <Link href="/contact">Contact Us</Link>
               </div>
               <button
                 className="nav__link home__cart__link"

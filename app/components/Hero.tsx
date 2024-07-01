@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { FC } from "react";
 
 const Hero: FC = () => {
@@ -8,9 +9,11 @@ const Hero: FC = () => {
           <h1>Raining Offers For Hot Summer!</h1>
           <h3>25% Off On All Products</h3>
           <div className="cta__btns">
-            <button className="primary__cta__btn primary__btn">Shop Now</button>
+            <button className="primary__cta__btn primary__btn">
+              <Link href="/store">Shop Now</Link>
+            </button>
             <button className="secondary__cta__btn primary__btn">
-              Fnd More
+              <Link href="/contact">Find More</Link>
             </button>
           </div>
         </div>

@@ -10,6 +10,19 @@ import MobileDrawer from "./MobileDrawer";
 import CartDrawer from "./CartDrawer";
 import { cartDrawerAtom, mobileDrawerAtom } from "@/atoms";
 import { useAtom } from "jotai";
+import { usePathname } from "next/navigation";
+
+const NavLink = ({ href, children }) => {
+  const pathname = usePathname();
+  const isActive = pathname.startsWith(href);
+  return (
+    <Link href={href}>
+      <div className={`${isActive ? "text-blue-600" : "text-gray-700"}`}>
+        {children}
+      </div>
+    </Link>
+  );
+};
 
 const Header: FC = () => {
   const [cartDrawerOpen, setCartDrawerOpen] = useAtom(cartDrawerAtom);
@@ -25,28 +38,16 @@ const Header: FC = () => {
                 <Image src={logo} alt="logo" />
               </Link>
               <div className="nav__links">
-                <Link className="nav__link" href="/store">
-                  Everything
-                </Link>
-                <Link className="nav__link" href="/women">
-                  Women
-                </Link>
-                <Link className="nav__link" href="/men">
-                  Men
-                </Link>
-                <Link className="nav__link" href="/accessories">
-                  Accessories
-                </Link>
+                <NavLink href="/store">Everything</NavLink>
+                <NavLink href="/women">Women</NavLink>
+                <NavLink href="/men">Men</NavLink>
+                <NavLink href="/accessories">Accessories</NavLink>
               </div>
             </div>
             <div className="header__primary__section">
               <div className="nav__menu">
-                <Link className="nav__link" href="/about">
-                  About
-                </Link>
-                <Link className="nav__link" href="/contact">
-                  Contact Us
-                </Link>
+                <NavLink href="/about">About</NavLink>
+                <NavLink href="/contact">Contact Us</NavLink>
               </div>
               <button
                 className="nav__link header__cart__link"

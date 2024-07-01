@@ -26,18 +26,18 @@ const Footer: FC = () => {
           <div className="primary__footer__column">
             <div className="primary__footer__column__heading">For her</div>
             <Link href="/">Women jeans</Link>
-            <Link href="/">Women jeans</Link>
-            <Link href="/">Women jeans</Link>
-            <Link href="/">Women jeans</Link>
-            <Link href="/">Women jeans</Link>
+            <Link href="/">Tops and Skirts</Link>
+            <Link href="/">Women Jackets</Link>
+            <Link href="/">Heels ans Flats</Link>
+            <Link href="/">Women Accessories</Link>
           </div>
           <div className="primary__footer__column">
             <div className="primary__footer__column__heading">For him</div>
-            <Link href="/">men jeans</Link>
-            <Link href="/">men jeans</Link>
-            <Link href="/">men jeans</Link>
-            <Link href="/">men jeans</Link>
-            <Link href="/">men jeans</Link>
+            <Link href="/">Men Jeans</Link>
+            <Link href="/">Men Shirts</Link>
+            <Link href="/">Men Shoes</Link>
+            <Link href="/">Men Accessories</Link>
+            <Link href="/">Men Jackets</Link>
           </div>
           <div className="primary__footer__column">
             <div className="primary__footer__column__heading">Subscribe</div>

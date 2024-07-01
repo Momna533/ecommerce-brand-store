@@ -1,30 +1,30 @@
-import bag1 from "@/app/images/product-bag1-300x300.jpg";
-import bag2 from "@/app/images/product-bag3-300x300.jpg";
-import productMJeans3 from "@/app/images/product-m-jeans3-300x300.jpg";
-import productMJeans4 from "@/app/images/product-m-jeans4-300x300.jpg";
-import productWJeans2 from "@/app/images/product-w-jeans2-300x300.jpg";
-import jeans3 from "@/app/images/product-w-jeans1-300x300.jpg";
-import productWJeans1 from "@/app/images/product-m-jeans1-300x300.jpg";
-import accessory1 from "@/app/images/product-accessory1-300x300.jpg";
-import productAccessory3 from "@/app/images/product-accessory3-300x300.jpg";
-import productAccessory2 from "@/app/images/product-accessory2-300x300.jpg";
-import productWJeans4 from "@/app/images/product-w-jeans4-300x300.jpg";
-import productHoodie3 from "@/app/images/product-hoodie3-300x300.jpg";
-import productHoodie1 from "@/app/images/product-hoodie1-300x300.jpg";
-import productHoodie2 from "@/app/images/product-hoodie1-300x300.jpg";
-import productHoodie4 from "@/app/images/product-hoodie4.jpg-300x300.jpg";
-import productBag2 from "@/app/images/product-bag2-300x300.jpg";
-import productBag3 from "@/app/images/product-bag3-300x300.jpg";
-import productBag4 from "@/app/images/product-bag4-300x300.jpg";
-import tshirt4 from "@/app/images/tshirt4-300x300.jpg";
-import tshirt1 from "@/app/images/tshirt1-300x300.jpg";
-import tshirt2 from "@/app/images/tshirt2-300x300.jpg";
-import tshirt3 from "@/app/images/tshirt3-300x300.jpg";
-import tshirt7 from "@/app/images/tshirt7-300x300.jpg";
-import productMjeans2 from "@/app/images/product-m-jeans2-300x300.jpg";
-import sportsShoe1 from "@/app/images/sports-shoe1-300x300.jpg";
+import productAccessory1 from "@/app/images/product-accessory1.jpg";
+import productAccessory3 from "@/app/images/product-accessory3-600x600.jpg";
+import productAccessory2 from "@/app/images/product-accessory2-600x600.jpg";
+import productHoodie3 from "@/app/images/product-hoodie3-600x600.jpg";
+import productHoodie1 from "@/app/images/product-hoodie1-600x600.jpg";
+import productHoodie2 from "@/app/images/product-hoodie2-600x600.jpg";
+import productHoodie4 from "@/app/images/product-hoodie4.jpg.jpg";
+import productBag1 from "@/app/images/product-bag1.jpg";
+import productBag2 from "@/app/images/product-bag2-600x600.jpg";
+import productBag3 from "@/app/images/product-bag3.jpg";
+import productBag4 from "@/app/images/product-bag4-600x600.jpg";
+import tshirt4 from "@/app/images/tshirt4-600x600.jpg";
+import tshirt1 from "@/app/images/tshirt1-600x600.jpg";
+import tshirt2 from "@/app/images/tshirt2-600x600.jpg";
+import tshirt3 from "@/app/images/tshirt3-600x600.jpg";
+import tshirt7 from "@/app/images/tshirt7-600x600.jpg";
+import productMJeans1 from "@/app/images/product-m-jeans1.jpg";
+import productMjeans2 from "@/app/images/product-m-jeans2-600x600.jpg";
+import productMJeans3 from "@/app/images/product-m-jeans3-600x600.jpg";
+import productMJeans4 from "@/app/images/product-m-jeans4-600x600.jpg";
+import productWJeans1 from "@/app/images/product-w-jeans1-600x600.jpg";
+import productWJeans2 from "@/app/images/product-w-jeans2-600x600.jpg";
+import productWJeans3 from "@/app/images/product-w-jeans3-600x600.jpg";
+import productWJeans4 from "@/app/images/product-w-jeans4.jpg";
+import sportsShoe1 from "@/app/images/sports-shoe1.jpg";
 import sportsShoe2 from "@/app/images/sports-shoe2-600x600.jpg";
-import sportsShoe3 from "@/app/images/sports-shoe3-300x300.jpg";
+import sportsShoe3 from "@/app/images/sports-shoe3.jpg";
 import sportsShoe4 from "@/app/images/sports-shoe4-600x600.jpg";
 import sportsShoe5 from "@/app/images/sports-shoe5-600x600.jpg";
 
@@ -32,7 +32,7 @@ import sportsShoe5 from "@/app/images/sports-shoe5-600x600.jpg";
 export const data = [
     {
       id: 1,
-      img: sportsShoe1,
+      img: sportsShoe3,
       title: "dnk yellow shoes",
       price: "$120.00",
       category: "men",
@@ -48,7 +48,7 @@ export const data = [
     },
     {
       id: 3,
-      img: productWJeans4,
+      img: productMJeans1,
       title: "Dark brown jeans",
       price: "$150.00",
       category: "men",
@@ -64,10 +64,10 @@ export const data = [
     },
     {
       id: 5,
-      img: jeans3,
+      img: productWJeans4,
       title: "Basic grey jeans",
       price: "$150.00",
-      category: "women",
+      category: "men",
       featured: true,
     },
     {
@@ -80,7 +80,7 @@ export const data = [
     },
     {
       id: 7,
-      img: accessory1,
+      img: productAccessory2,
       title: "Anchor braceet",
       price: "$150.00-$180.00",
       category: "accessories",
@@ -88,7 +88,7 @@ export const data = [
     },
     {
       id: 8,
-      img: productAccessory2,
+      img: productAccessory1,
       title: "boho bangle braceet",
       price: "$150.00-$170.00",
       category: "accessories",
@@ -96,7 +96,7 @@ export const data = [
     },
     {
       id: 9,
-      img: bag2,
+      img: productBag1,
       title: "light brown purse",
       price: "$150.00",
       category: "accessories",
@@ -124,7 +124,7 @@ export const data = [
       title: "Basic grey jeans",
       price: "$100.00-$140.00",
       category: "women",
-      featured: true,
+      featured: false,
     },
     {
       id: 13,
@@ -196,7 +196,7 @@ export const data = [
       title: "dnk black shoes",
       price: "$200.00-$240.00",
       category: "women",
-      featured: true,
+      featured: false,
     },
     {
       id: 22,

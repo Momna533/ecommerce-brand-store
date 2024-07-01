@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { FaChevronRight } from "react-icons/fa6";
-import avatarImg from "@/app/images/product-accessory1-300x300.jpg";
+import avatarImg from "@/app/images/product-accessory1.jpg";
 
 const FiltersContainer = () => {
   return (
