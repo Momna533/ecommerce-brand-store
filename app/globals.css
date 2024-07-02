@@ -54,7 +54,7 @@ a {
   padding: 0.75em 1em;
   cursor: pointer;
   text-transform: uppercase;
-  font-weight: 700;
+  font-weight: 500;
   font-size: 14px;
 }
 .primary__btn:hover {
@@ -267,7 +267,7 @@ a {
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  padding: 0.75em 1.75em;
+  padding: 1em 1.75em;
 }
 .logo {
   display: flex;
@@ -894,6 +894,7 @@ main form select {
   .container {
     gap: 1.75em;
   }
+
   main {
     padding: 3em 1.75em;
   }
@@ -901,6 +902,9 @@ main form select {
 @media (max-width: 1024px) {
   .container {
     flex-direction: column-reverse;
+  }
+  .single__product__container {
+    flex-direction: column !important;
   }
   main {
     width: 100%;
@@ -913,6 +917,7 @@ main form select {
   .container {
     padding: 3em 1em;
   }
+
   main {
     padding: 3em 1em;
   }

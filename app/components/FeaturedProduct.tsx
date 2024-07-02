@@ -2,16 +2,16 @@ import Image from "next/image";
 import Link from "next/link";
 import { FaCartShopping } from "react-icons/fa6";
 
-const FeaturedProduct = ({ img, title, price, category }) => {
+const FeaturedProduct = ({ id, img, title, price, category }) => {
   return (
     <div className="featured__products__card">
-      <Link href={`/${title}`}>
+      <Link href={`/${id}`}>
         <div className="featured__products__card__image">
           <Image src={img} alt="product" />
         </div>
       </Link>
       <div className="featured__products__card__content">
-        <Link href={`/${title}`}>
+        <Link href={`/${id}`}>
           <h4>{title}</h4>
         </Link>
         <p>{category}</p>

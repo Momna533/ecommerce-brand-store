@@ -6,13 +6,13 @@ import Image from "next/image";
 const ProductCard: FC = ({ id, title, img, category, price }) => {
   return (
     <div className="featured__products__card products__card">
-      <Link href="/accessories/a">
+      <Link href={`/${category}/${id}`}>
         <div className="featured__products__card__image">
           <Image src={img} alt="product" />
         </div>
       </Link>
       <div className="featured__products__card__content">
-        <Link href="/accessories/a">
+        <Link href={`/accessories/${id}`}>
           <h4>{title}</h4>
         </Link>
         <p>{category}</p>
