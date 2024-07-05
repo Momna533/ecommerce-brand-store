@@ -2,7 +2,7 @@
 
 import { FC } from "react";
 import Link from "next/link";
-import logo from "../images/logo@2x-free-img.png";
+import logo from "@/images/logo@2x-free-img.png";
 import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa6";
 import PrimaryBtn from "./PrimaryBtn";
 import Image from "next/image";

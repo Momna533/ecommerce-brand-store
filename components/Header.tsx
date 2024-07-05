@@ -2,7 +2,7 @@
 
 import { FC } from "react";
 import Link from "next/link";
-import logo from "../images/logo@2x-free-img.png";
+import logo from "@/images/logo@2x-free-img.png";
 import { FaCartShopping, FaUser } from "react-icons/fa6";
 import MobileHeader from "./MobileHeader";
 import Image from "next/image";

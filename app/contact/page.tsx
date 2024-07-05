@@ -1,8 +1,8 @@
 import { FC } from "react";
-import ContactHero from "../components/ContactHero";
-import PrimaryBtn from "../components/PrimaryBtn";
-import Header from "@/app/components/Header";
-import Footer from "@/app/components/Footer";
+import ContactHero from "../../components/ContactHero";
+import PrimaryBtn from "../../components/PrimaryBtn";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 const Page: FC = () => {
   return (

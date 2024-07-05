@@ -1,19 +1,36 @@
 "use client";
 
-import Footer from "@/app/components/Footer";
-import Header from "@/app/components/Header";
-import FiltersContainer from "@/app/components/FiltersContainer";
-import BreadCrumbs from "@/app/components/BreadCrumbs";
-import ProductCard from "@/app/components/ProductCard";
-import Pagination from "@/app/components/Pagination";
+import Footer from "@/components/Footer";
+import Header from "@/components/Header";
+import FiltersContainer from "@/components/FiltersContainer";
+import BreadCrumbs from "@/components/Breadcrumbs";
+import ProductCard from "@/components/ProductCard";
 import { useAtom } from "jotai";
 import { productsAtom } from "@/atoms";
+import { useState } from "react";
+import { FaArrowLeft } from "react-icons/fa6";
+import Pagination from "@/components/Pagination";
 
 const page = () => {
-  const [products, setProducts] = useAtom(productsAtom);
+  const [products] = useAtom(productsAtom);
+  const [currentPage, setcurrentPage] = useState(1);
   const accessories = products.filter(
     (product) => product.category === "accessories"
   );
+  const totalItems = accessories.length;
+  const itemsPerPage = 10;
+  const totalPages = Math.ceil(totalItems / itemsPerPage);
+  const pages = Array.from({ length: totalPages }, (_, item) => item + 1);
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const firstItemIndex = indexOfLastItem - itemsPerPage;
+  const currentItems = accessories.slice(firstItemIndex, indexOfLastItem);
+  const firstItem = firstItemIndex + 1;
+  const lastItem = Math.min(currentPage * itemsPerPage, totalItems);
+
+  const handlePageChange = (page) => {
+    setcurrentPage(page);
+  };
+
   return (
     <>
       <Header />
@@ -22,7 +39,10 @@ const page = () => {
         <main>
           <BreadCrumbs path="accessories" />
           <div className="row">
-            <p className="search__results">Showing 1-12 of 31 results</p>
+            <p className="search__results">
+              {" "}
+              Showing {firstItem}-{lastItem} of {totalItems} results
+            </p>
             <form>
               <select name="" id="" className="filters__select">
                 <option value="">default</option>
@@ -32,11 +52,17 @@ const page = () => {
             </form>
           </div>
           <div className="products">
-            {accessories.map((product) => {
+            {currentItems.map((product) => {
               return <ProductCard key={product.id} {...product} />;
             })}
           </div>
-          <Pagination />
+          <Pagination
+            currentPage={currentPage}
+            setcurrentPage={setcurrentPage}
+            handlePageChange={handlePageChange}
+            totalPages={totalPages}
+            pages={pages}
+          />
         </main>
       </div>
       <Footer />

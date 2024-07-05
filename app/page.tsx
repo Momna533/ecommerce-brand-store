@@ -1,9 +1,9 @@
 "use client";
 import { FC } from "react";
-import Hero from "@/app/components/Hero";
-import FeaturedProducts from "@/app/components/FeaturedProducts";
-import HomeHeader from "./components/HomeHeader";
-import Footer from "./components/Footer";
+import Hero from "@/components/Hero";
+import FeaturedProducts from "@/components/FeaturedProducts";
+import HomeHeader from "../components/HomeHeader";
+import Footer from "../components/Footer";
 import { featuredAtom } from "@/atoms";
 import { useAtom } from "jotai";
 

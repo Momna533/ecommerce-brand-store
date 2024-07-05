@@ -1,9 +1,9 @@
 import { FC } from "react";
-import AboutHero from "@/app/components/AboutHero";
-import aboutSectionImg from "@/app/images/slide-image-free-img.jpg";
+import AboutHero from "@/components/AboutHero";
+import aboutSectionImg from "@/images/slide-image-free-img.jpg";
 import Image from "next/image";
-import Header from "@/app/components/Header";
-import Footer from "@/app/components/Footer";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 const Page: FC = () => {
   return (

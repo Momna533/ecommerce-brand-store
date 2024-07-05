@@ -12,7 +12,7 @@ import { useState } from "react";
 
 const page = () => {
   const [products] = useAtom(productsAtom);
-  const [currentPage, setCurrentPage] = useState(1);
+  const [currentPage, setcurrentPage] = useState(1);
   const womenProducts = products.filter(
     (product) => product.category === "women"
   );
@@ -20,13 +20,15 @@ const page = () => {
   const itemsPerPage = 10;
   const totalPages = Math.ceil(totalItems / itemsPerPage);
   const pages = Array.from({ length: totalPages }, (_, item) => item + 1);
-  const handlePageChange = (page) => {
-    setCurrentPage(page);
-  };
   const indexOfLastItem = currentPage * itemsPerPage;
-  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  const currentItems = womenProducts.slice(indexOfFirstItem, indexOfLastItem);
+  const firstItemIndex = indexOfLastItem - itemsPerPage;
+  const currentItems = womenProducts.slice(firstItemIndex, indexOfLastItem);
+  const firstItem = firstItemIndex + 1;
+  const lastItem = Math.min(currentPage * itemsPerPage, totalItems);
 
+  const handlePageChange = (page) => {
+    setcurrentPage(page);
+  };
   return (
     <>
       <Header />
@@ -35,7 +37,7 @@ const page = () => {
         <main>
           <BreadCrumbs path="women" />
           <div className="row">
-            <p className="search__results">Showing 1-12 of 31 results</p>
+            Showing {firstItem}-{lastItem} of {totalItems} results
             <form>
               <select name="" id="" className="filters__select">
                 <option value="">default</option>
@@ -49,7 +51,13 @@ const page = () => {
               return <ProductCard key={product.id} {...product} />;
             })}
           </div>
-          <Pagination />
+          <Pagination
+            currentPage={currentPage}
+            setcurrentPage={setcurrentPage}
+            handlePageChange={handlePageChange}
+            totalPages={totalPages}
+            pages={pages}
+          />
         </main>
       </div>
       <Footer />

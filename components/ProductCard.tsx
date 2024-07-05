@@ -1,6 +1,5 @@
 import { FC } from "react";
 import Link from "next/link";
-import productImg from "@/app/images/product-accessory2.jpg";
 import { FaCartShopping } from "react-icons/fa6";
 import Image from "next/image";
 const ProductCard: FC = ({ id, title, img, category, price }) => {

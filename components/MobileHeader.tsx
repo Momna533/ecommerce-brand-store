@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import logo from "@/app/images/logo@2x-free-img.png";
+import logo from "@/images/logo@2x-free-img.png";
 import { FaCartShopping } from "react-icons/fa6";
 import { FaHamburger } from "react-icons/fa";
 import MobileDrawer from "./MobileDrawer";

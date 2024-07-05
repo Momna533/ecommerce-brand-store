@@ -1,10 +1,9 @@
 "use client";
 
 import React, { useMemo } from "react";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 import Image from "next/image";
-import placeHolderImage from "@/app/images/product-accessory2-600x600.jpg";
 import { usePathname } from "next/navigation";
 import { useAtom } from "jotai";
 import { productsAtom } from "@/atoms";

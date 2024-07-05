@@ -2,11 +2,11 @@
 
 import { FaCartShopping } from "react-icons/fa6";
 import shirt from "../assets/sports-shoe1-300x300.jpg";
-import PrimaryBtn from "../components/PrimaryBtn";
+import PrimaryBtn from "../../components/PrimaryBtn";
 import { CgClose } from "react-icons/cg";
 import { useState } from "react";
-import Footer from "../components/Footer";
-import Header from "../components/Header";
+import Footer from "../../components/Footer";
+import Header from "../../components/Header";
 
 const Page = () => {
   const [cart, setCart] = useState([]);
