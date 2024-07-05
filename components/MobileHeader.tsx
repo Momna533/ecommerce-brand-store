@@ -6,7 +6,7 @@ import { FaCartShopping } from "react-icons/fa6";
 import { FaHamburger } from "react-icons/fa";
 import MobileDrawer from "./MobileDrawer";
 import Image from "next/image";
-import CartDrawer from "@/app/components/CartDrawer";
+import CartDrawer from "@/components/CartDrawer";
 import { useAtom } from "jotai";
 import { cartDrawerAtom, mobileDrawerAtom } from "@/atoms";
 
