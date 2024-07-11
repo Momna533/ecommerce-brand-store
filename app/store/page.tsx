@@ -34,9 +34,9 @@ const page = () => {
         <main>
           <BreadCrumbs path="store" />
           <div className="row">
-            <p className="search__results">
+            <div className="search__results">
               Showing {firstItem}-{lastItem} of {totalItems} results
-            </p>
+            </div>
             <form>
               <select name="" id="" className="filters__select">
                 <option value="">default</option>
@@ -52,7 +52,6 @@ const page = () => {
           </div>
           <Pagination
             currentPage={currentPage}
-            setcurrentPage={setcurrentPage}
             handlePageChange={handlePageChange}
             totalPages={totalPages}
             pages={pages}
