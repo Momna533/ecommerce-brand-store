@@ -13,7 +13,7 @@ const FiltersContainer = () => {
         </button>
       </form>
       <div className="product__categories">
-        <h3>Categories</h3>
+        <h4>Categories</h4>
         <ul>
           <li>
             <Link href={"accessories"}>
@@ -36,14 +36,14 @@ const FiltersContainer = () => {
         </ul>
       </div>
       <div className="bestSeller__container">
-        <h3>Best Sellers</h3>
+        <h4>Best Sellers</h4>
         <ul>
           <li className="bestSeller__entry">
             <div className="bestSeller__entry__image">
               <Image src={avatarImg} alt="shoe" />
             </div>
             <div className="bestSeller__enrty__info">
-              <h4>shoes</h4>
+              <h5>shoes</h5>
               <span>$100</span>
             </div>
           </li>
@@ -53,7 +53,7 @@ const FiltersContainer = () => {
               <Image src={avatarImg} alt="shoe" />
             </div>
             <div className="bestSeller__enrty__info">
-              <h4>shoes</h4>
+              <h5>shoes</h5>
               <span>$100</span>
             </div>
           </li>
