@@ -14,8 +14,8 @@ const FeaturedProduct = ({ id, img, title, price, category }) => {
         <Link href={`/${id}`}>
           <h4>{title}</h4>
         </Link>
-        <p>{category}</p>
-        <p>{price}</p>
+        <div className="category">{category}</div>
+        <h5 className="price">{price}</h5>
         <div className="variations"></div>
         <div className="rating"></div>
         <div className="featured__products__card__content__cart">
