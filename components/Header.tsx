@@ -16,10 +16,13 @@ const NavLink = ({ href, children }) => {
   const pathname = usePathname();
   const isActive = pathname.startsWith(href);
   return (
-    <Link href={href}>
-      <div className={`${isActive ? "text-blue-600" : "text-gray-700"}`}>
-        {children}
-      </div>
+    <Link
+      href={href}
+      className={`${
+        isActive ? "text-blue-600 nav__link active" : "text-gray-700 nav__link"
+      }`}
+    >
+      {children}
     </Link>
   );
 };
