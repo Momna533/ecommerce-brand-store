@@ -13,15 +13,15 @@ const Footer: FC = () => {
       <div className="footer__content">
         <div className="above__footer">
           <Link href="/">
-            <h2>
+            <h4>
               SALE UP TO 70% OFF FOR ALL CLOTHES & FASHION ITEMS, ON ALL BRANDS.
-            </h2>
+            </h4>
           </Link>
         </div>
         <div className="primary__footer">
           <div className="primary__footer__column">
             <Image src={logo} alt="logo" width={90} height={30} />
-            <h4>The best look anytime anywhere.</h4>
+            <h5>The best look anytime anywhere.</h5>
           </div>
           <div className="primary__footer__column">
             <div className="primary__footer__column__heading">For her</div>
@@ -44,7 +44,6 @@ const Footer: FC = () => {
             <form>
               <input type="email" placeholder="Enter your email" />
               <PrimaryBtn
-                className=""
                 onClick={() => console.log("subscribe")}
                 title="Subscribe"
               />
@@ -52,7 +51,7 @@ const Footer: FC = () => {
           </div>
         </div>
         <div className="below__footer">
-          <p>Copyright © 2024 Brandstore. Powered by Brandstore.</p>
+          <div>Copyright © 2024 Brandstore. Powered by Brandstore.</div>
           <div className="footer__social__links">
             <a href="https://www.facebook.com/" target="_blank">
               <FaFacebook />
