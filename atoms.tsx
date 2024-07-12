@@ -7,3 +7,5 @@ export const featuredAtom = atom(featured);
 export const cartDrawerAtom = atom(false);
 export const mobileDrawerAtom = atom(false);
 export const currentItemsAtom = atom([]);
+export const isHomePageAtom = atom(true);
+export const isRoutePageAtom = atom(false);

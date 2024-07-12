@@ -5,44 +5,30 @@ import Header from "@/components/Header";
 import FiltersContainer from "@/components/FiltersContainer";
 import BreadCrumbs from "@/components/Breadcrumbs";
 import ProductCard from "@/components/ProductCard";
-import { useAtom } from "jotai";
-import { productsAtom } from "@/atoms";
-import { useState } from "react";
-import { FaArrowLeft } from "react-icons/fa6";
 import Pagination from "@/components/Pagination";
 
-const page = () => {
-  const [products] = useAtom(productsAtom);
-  const [currentPage, setcurrentPage] = useState(1);
-  const accessories = products.filter(
-    (product) => product.category === "accessories"
-  );
-  const totalItems = accessories.length;
-  const itemsPerPage = 10;
-  const totalPages = Math.ceil(totalItems / itemsPerPage);
-  const pages = Array.from({ length: totalPages }, (_, item) => item + 1);
-  const indexOfLastItem = currentPage * itemsPerPage;
-  const firstItemIndex = indexOfLastItem - itemsPerPage;
-  const currentItems = accessories.slice(firstItemIndex, indexOfLastItem);
-  const firstItem = firstItemIndex + 1;
-  const lastItem = Math.min(currentPage * itemsPerPage, totalItems);
-
-  const handlePageChange = (page) => {
-    setcurrentPage(page);
-  };
-
+const CategoriesLayout = ({
+  breadcrumbsPath,
+  currentPage,
+  currentItems,
+  firstItem,
+  lastItem,
+  totalItems,
+  handlePageChange,
+  totalPages,
+  pages,
+}) => {
   return (
-    <>
+    <div className="flex flex-col">
       <Header />
       <div className="container">
         <FiltersContainer />
         <main>
-          <BreadCrumbs path="accessories" />
+          <BreadCrumbs path={breadcrumbsPath} />
           <div className="row">
-            <p className="search__results">
-              {" "}
+            <div className="search__results">
               Showing {firstItem}-{lastItem} of {totalItems} results
-            </p>
+            </div>
             <form>
               <select name="" id="" className="filters__select">
                 <option value="">default</option>
@@ -58,7 +44,6 @@ const page = () => {
           </div>
           <Pagination
             currentPage={currentPage}
-            setcurrentPage={setcurrentPage}
             handlePageChange={handlePageChange}
             totalPages={totalPages}
             pages={pages}
@@ -66,8 +51,8 @@ const page = () => {
         </main>
       </div>
       <Footer />
-    </>
+    </div>
   );
 };
 
-export default page;
+export default CategoriesLayout;

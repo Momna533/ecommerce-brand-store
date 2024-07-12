@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Rings } from "react-loader-spinner";
+import { InfinitySpin } from "react-loader-spinner";
 
 const loading = () => {
   return (
@@ -16,14 +16,11 @@ const loading = () => {
         alignItems: "center",
       }}
     >
-      <Rings
+      <InfinitySpin
         visible={true}
-        height="120"
-        width="120"
+        width="200"
         color="#0084d6"
-        ariaLabel="rings-loading"
-        wrapperStyle={{}}
-        wrapperClass=""
+        ariaLabel="infinity-spin-loading"
       />
     </div>
   );

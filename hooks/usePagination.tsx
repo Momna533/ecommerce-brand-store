@@ -1,18 +1,30 @@
-import { productsAtom } from "@/atoms";
-import { useAtom } from "jotai";
-import React, { useState } from "react";
+import { useState } from "react";
 
-const usePagination = ({ category, itemsPerPage = 10 }) => {
-  const [products] = useAtom(productsAtom);
+const usePagination = (category, itemsPerPage = 10) => {
   const [currentPage, setcurrentPage] = useState(1);
-  const totalPages = Math.ceil(currentPage / itemsPerPage);
-  const filteredProducts = products.filter(
-    (product) => product.category === category
-  );
-  console.log(filteredProducts);
+  const totalItems = category.length;
+  const totalPages = Math.ceil(totalItems / itemsPerPage);
+  const pages = Array.from({ length: totalPages }, (_, item) => item + 1);
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const firstItemIndex = indexOfLastItem - itemsPerPage;
+  const currentItems = category.slice(firstItemIndex, indexOfLastItem);
+  const firstItem = firstItemIndex + 1;
+  const lastItem = Math.min(currentPage * itemsPerPage, totalItems);
 
-  const currentItems = [];
-  return { currentItems };
+  const handlePageChange = (page) => {
+    setcurrentPage(page);
+  };
+
+  return {
+    currentPage,
+    currentItems,
+    firstItem,
+    lastItem,
+    totalItems,
+    handlePageChange,
+    totalPages,
+    pages,
+  };
 };
 
 export default usePagination;
