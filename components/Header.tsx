@@ -1,6 +1,5 @@
 "use client";
 
-// import { FC } from "react";
 import Link from "next/link";
 import routeLogo from "@/images/logo@2x-free-img.png";
 import homeLogo from "@/images/logo1-free-img.png";
@@ -9,22 +8,26 @@ import MobileHeader from "./MobileHeader";
 import Image from "next/image";
 import MobileDrawer from "./MobileDrawer";
 import CartDrawer from "./CartDrawer";
-import { cartDrawerAtom, mobileDrawerAtom } from "@/atoms";
 import { usePathname } from "next/navigation";
-import React, { useEffect, useState } from "react";
-import { useAtom } from "jotai";
+import React, { useEffect } from "react";
+import { useGlobalContext } from "@/context/Context";
 
 const Header = () => {
-  const [homePage, setHomePage] = useState(true);
-  const [routePage, setRoutePage] = useState(false);
-  const [cartDrawerOpen, setCartDrawerOpen] = useAtom(cartDrawerAtom);
-  const [mobileDrawerOpen, setMobileDrawerOpen] = useAtom(mobileDrawerAtom);
+  const {
+    cartDrawerOpen,
+    setCartDrawerOpen,
+    isHomePage,
+    setIsHomePage,
+    isRoutePage,
+    setIsRoutePage,
+    mobileDrawerOpen,
+  } = useGlobalContext();
 
   const path = usePathname();
   useEffect(() => {
     if (path === "/" || path === "/about" || path === "/contact") {
-      setHomePage(true);
-      setRoutePage(false);
+      setIsHomePage(true);
+      setIsRoutePage(false);
     } else if (
       path === "/store" ||
       path === "/women" ||
@@ -32,54 +35,60 @@ const Header = () => {
       path === "/accessories" ||
       path === "/cart"
     ) {
-      setHomePage(false);
-      setRoutePage(true);
+      setIsHomePage(false);
+      setIsRoutePage(true);
     }
-  }, [path, setHomePage, setRoutePage]);
+  }, [path, setIsHomePage, setIsRoutePage]);
   return (
     <>
-      <div className={homePage ? "home__header" : routePage ? "header" : ""}>
+      <div
+        className={isHomePage ? "home__header" : isRoutePage ? "header" : ""}
+      >
         <div
           className={
-            homePage
+            isHomePage
               ? "home__header__content"
-              : routePage
+              : isRoutePage
               ? "header__content"
               : ""
           }
         >
           <div
             className={
-              homePage
+              isHomePage
                 ? "home__desktop__header"
-                : routePage
+                : isRoutePage
                 ? "desktop__header"
                 : ""
             }
           >
             <div
               className={
-                homePage
+                isHomePage
                   ? "home__header__primary__section"
-                  : routePage
+                  : isRoutePage
                   ? "header__primary__section"
                   : ""
               }
             >
               <Link className="logo" href="/">
                 <Image
-                  src={homePage ? homeLogo : routePage ? routeLogo : ""}
+                  src={isHomePage ? homeLogo : isRoutePage ? routeLogo : ""}
                   alt="logo"
                 />
               </Link>
               <div
                 className={
-                  homePage ? "home__nav__links" : routePage ? "nav__links" : ""
+                  isHomePage
+                    ? "home__nav__links"
+                    : isRoutePage
+                    ? "nav__links"
+                    : ""
                 }
               >
-                {homePage ? (
+                {isHomePage ? (
                   <HomeNavLinks />
-                ) : routePage ? (
+                ) : isRoutePage ? (
                   <RouteNavLinks />
                 ) : (
                   ""
@@ -88,19 +97,23 @@ const Header = () => {
             </div>
             <div
               className={
-                homePage
+                isHomePage
                   ? "home__header__primary__section"
-                  : routePage
+                  : isRoutePage
                   ? "header__primary__section"
                   : ""
               }
             >
               <div
                 className={
-                  homePage ? "home__nav__menu" : routePage ? "nav__menu" : ""
+                  isHomePage
+                    ? "home__nav__menu"
+                    : isRoutePage
+                    ? "nav__menu"
+                    : ""
                 }
               >
-                {homePage ? (
+                {isHomePage ? (
                   <>
                     <Link href="/about" className="nav__link">
                       About
@@ -109,7 +122,7 @@ const Header = () => {
                       Contact Us
                     </Link>
                   </>
-                ) : routePage ? (
+                ) : isRoutePage ? (
                   <>
                     <NavLink href="/about">About</NavLink>
                     <NavLink href="/contact">Contact Us</NavLink>
@@ -120,9 +133,9 @@ const Header = () => {
               </div>
               <button
                 className={`nav__link ${
-                  homePage
+                  isHomePage
                     ? "home__cart__link"
-                    : routePage
+                    : isRoutePage
                     ? "header__cart__link"
                     : ""
                 }`}

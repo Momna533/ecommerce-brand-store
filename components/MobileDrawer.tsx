@@ -1,11 +1,10 @@
 import { CgClose } from "react-icons/cg";
 import { FaUser } from "react-icons/fa6";
 import Link from "next/link";
-import { useAtom } from "jotai";
-import { mobileDrawerAtom } from "@/atoms";
+import { useGlobalContext } from "@/context/Context";
 
 const MobileDrawer = () => {
-  const [mobileDrawerOpen, setMobileDrawerOpen] = useAtom(mobileDrawerAtom);
+  const { mobileDrawerOpen, setMobileDrawerOpen } = useGlobalContext();
 
   return (
     <div className={`mobile__drawer ${mobileDrawerOpen ? "active" : ""}`}>

@@ -7,12 +7,15 @@ import { FaHamburger } from "react-icons/fa";
 import MobileDrawer from "./MobileDrawer";
 import Image from "next/image";
 import CartDrawer from "@/components/CartDrawer";
-import { useAtom } from "jotai";
-import { cartDrawerAtom, mobileDrawerAtom } from "@/atoms";
+import { useGlobalContext } from "@/context/Context";
 
 const Header = () => {
-  const [cartDrawerOpen, setCartDrawerOpen] = useAtom(cartDrawerAtom);
-  const [mobileDrawerOpen, setMobileDrawerOpen] = useAtom(mobileDrawerAtom);
+  const {
+    cartDrawerOpen,
+    setCartDrawerOpen,
+    mobileDrawerOpen,
+    setMobileDrawerOpen,
+  } = useGlobalContext();
 
   return (
     <>

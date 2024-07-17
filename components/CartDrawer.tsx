@@ -1,67 +1,68 @@
 "use client";
 
-import { FC, useState } from "react";
+import { FC } from "react";
 import PrimaryBtn from "./PrimaryBtn";
 import { CgClose } from "react-icons/cg";
-import { useAtom } from "jotai";
-import { cartDrawerAtom } from "@/atoms";
+import Image from "next/image";
+import { useGlobalContext } from "@/context/Context";
 
 const CartDrawer: FC = () => {
-  const [cartDrawerOpen, setCartDrawerOpen] = useAtom(cartDrawerAtom);
-  const [cart, setCart] = useState([]);
-  const [productAmount, setProductAmount] = useState(1);
-  const [totalPrice, setTotalPrice] = useState(0);
-  const addToCart = (product) => {};
-  const removeFromCart = (productId) => {};
-  const updateProductAmount = (productId, newAmount) => {};
+  const { cartDrawerOpen, setCartDrawerOpen, cartItems, handleRemoveFromCart } =
+    useGlobalContext();
 
   return (
     <div className={`cart__drawer__overlay ${cartDrawerOpen ? "active" : ""}`}>
       <div className={`cart__drawer ${cartDrawerOpen ? "active" : ""}`}>
-        <div className="cart__drawer__header">
-          <h3>Shopping cart</h3>
-          <button onClick={() => setCartDrawerOpen(false)}>
-            <CgClose />
-          </button>
-        </div>
-        <div className="divider"></div>
-        <div className="cart__drawer__content">
-          {cart.length > 0 ? (
-            cart.map((item) => {
-              const { id, title, img, price } = item;
-              return (
-                <div className="cart__drawer__content__entry">
-                  <div className="cart__drawer__content__entry__left">
-                    <div className="cart__drawer__content__entry__img">
-                      <img src={img} alt={title} />
+        <div className="cart__drawer__top flex flex-col">
+          <div className="cart__drawer__header">
+            <h4>Shopping cart</h4>
+            <button onClick={() => setCartDrawerOpen(false)}>
+              <CgClose />
+            </button>
+          </div>
+          <div className="divider"></div>
+          <div className="cart__drawer__content overflow-auto">
+            {cartItems.length > 0 ? (
+              cartItems.map((item) => {
+                const { id, title, img, price } = item;
+                return (
+                  <>
+                    <div className="cart__drawer__content__entry" key={id}>
+                      <div className="cart__drawer__content__entry__left">
+                        <div className="cart__drawer__content__entry__img">
+                          <Image src={img} alt={title} />
+                        </div>
+                        <div className="cart__drawer__content__entry__info">
+                          <h5>{title}</h5>
+                          <span>
+                            <div className="amount">0</div>*
+                            <div className="price">$999</div>
+                          </span>
+                        </div>
+                      </div>
+                      <div className="cart__drawer__content__entry__right">
+                        <button onClick={() => handleRemoveFromCart(id)}>
+                          <CgClose />
+                        </button>
+                      </div>
                     </div>
-                    <div className="cart__drawer__content__entry__info">
-                      <h4>{title}</h4>
-                      <span>
-                        <div className="amount">{productAmount}</div>*
-                        <div className="price">{price}</div>
-                      </span>
-                    </div>
-                  </div>
-                  <div className="cart__drawer__content__entry__right">
-                    <button onClick={() => removeFromCart(id)}>
-                      <CgClose />
-                    </button>
-                  </div>
+                  </>
+                );
+              })
+            ) : (
+              <>
+                <div className="flex items-center justify-center h-full w-full mt-20">
+                  <h5>Nothing in cart yet</h5>
                 </div>
-              );
-            })
-          ) : (
-            <>
-              <h2>Nothing in cart yet</h2>
-            </>
-          )}
+              </>
+            )}
+          </div>
         </div>
         <div className="cart__drawer__footer">
           <div className="divider"></div>
           <div className="cart__drawer__subtotal">
-            <h3>Subtotal</h3>
-            <p>$150.00</p>
+            <h4>Subtotal</h4>
+            <div className="cart__total">$150.00</div>
           </div>
           <div className="divider"></div>
           <div className="cart__drawer__btns">

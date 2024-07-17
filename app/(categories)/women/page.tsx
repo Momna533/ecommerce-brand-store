@@ -1,16 +1,15 @@
 "use client";
 
-import { useAtom } from "jotai";
-import { productsAtom } from "@/atoms";
 import usePagination from "@/hooks/usePagination";
 import CategoriesLayout from "@/components/CategoriesLayout";
 import { usePathname } from "next/navigation";
 import React from "react";
+import { useGlobalContext } from "@/context/Context";
 
 const page = () => {
   const pathname = usePathname();
   const path = pathname.split("/");
-  const [products] = useAtom(productsAtom);
+  const { products } = useGlobalContext();
   const womenProducts = products.filter(
     (product) => product.category === "women"
   );

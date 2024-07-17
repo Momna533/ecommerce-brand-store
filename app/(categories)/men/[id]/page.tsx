@@ -5,25 +5,19 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { useAtom } from "jotai";
-import { productsAtom } from "@/atoms";
+import { useGlobalContext } from "@/context/Context";
 
 const page = () => {
   const pathname = usePathname();
   const pathId = pathname.split("/").pop();
 
-  const [products] = useAtom(productsAtom);
+  const { products } = useGlobalContext();
 
   const product = useMemo(() => {
     return products.find((item) => item.id == pathId);
   }, [products, pathId]);
 
   const { id, title, img, price, category } = product;
-
-  // const productIds = products.map((product) => product.id);
-  // const productId = productIds.filter((item) => item.id === id);
-  // console.log(productId);
-
   return (
     <>
       <Header />
