@@ -7,50 +7,55 @@ import { CgClose } from "react-icons/cg";
 import { useState } from "react";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
+import { useGlobalContext } from "@/context/Context";
+import Image from "next/image";
 
 const Page = () => {
-  const [cart, setCart] = useState([]);
+  const { cartItems } = useGlobalContext();
+
   return (
     <>
       <Header />
-      <div className="cart">
-        <div className="cart__content">
+      <div className="cart container">
+        <div className="cart__content w-full">
           <h1>Cart</h1>
-          {/* <div className="cart__item__header"></div> */}
-          {/* <div className="cart__item__heading">
-            <button></button>
-            <h4>Product</h4>
-            <h4>price</h4>
-            <h4>quantity</h4>
-            <h4>subtotal</h4>
-          </div> */}
-          {cart.length > 0 ? (
-            cart.map((item) => {
-              const { id, title, img, price } = item;
-              return (
-                <div className="cart__item">
-                  <button onClick={() => removeFromCart(id)}>
-                    <CgClose />
-                  </button>
-                  <div className="cart__item__img">
-                    <img src={img} alt={title} />
-                  </div>
-                  <h4>{title}</h4>
-                  <p>{price}</p>
-                  <p>amount</p>
-                  <p>subtotal</p>
-                </div>
-              );
-            })
+          {cartItems.length > 0 ? (
+            <table className="cart__table">
+              <thead className="cart__table__head">
+                <tr>
+                  <td>Product</td>
+                  <td>Price</td>
+                  <td>Quantity</td>
+                  <td>Subtotal</td>
+                </tr>
+              </thead>
+              <tbody>
+                {cartItems.map((item) => {
+                  const { id, title, img, price, amount } = item;
+                  return (
+                    <tr key={id}>
+                      <td>{title}</td>
+                      <td>{price}</td>
+                      <td>{amount}</td>
+                      <td>
+                        <div className="cart__item__img">
+                          <Image src={img} alt="cart__item__image" />
+                        </div>
+                      </td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
           ) : (
-            <>
+            <div className="pt-24 pb-24">
               <h3>Cart is currently empty</h3>
               <PrimaryBtn
                 varient="link"
                 to="/store"
                 title="continue shopping"
               />
-            </>
+            </div>
           )}
 
           {/* <div className="cart__item">

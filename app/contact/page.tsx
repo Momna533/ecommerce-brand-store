@@ -10,7 +10,7 @@ const Page: FC = () => {
       <Header />
       <ContactHero />
       <div className="contact__section">
-        <div className="contact__section__content">
+        <div className="contact__section__content container">
           <form>
             <input type="text" name="name" id="name" placeholder="name" />
             <input type="email" name="email" id="email" placeholder="email" />

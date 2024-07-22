@@ -98,6 +98,10 @@ input {
   justify-content: center;
   transition: all 0.3s ease;
   padding: 10px 20px;
+  font-family: "Lato", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1px;
 }
 .heading__border {
   background-color: #0084d6;
@@ -142,7 +146,7 @@ input {
   align-items: center;
   justify-content: center;
   gap: 1.25em;
-  padding: 0.5em 0;
+  padding: 1.05em 0;
 }
 .home__nav__links a,
 .home__nav__menu a {
@@ -152,6 +156,7 @@ input {
   font-size: 0.9em;
   text-transform: uppercase;
   padding: 0.25em;
+  font-family: "Lato", sans-serif;
 }
 .home__nav__links a {
   font-weight: 500;
@@ -191,12 +196,14 @@ input {
   padding: 0;
 }
 .cart__amount {
-  font-weight: bold;
+  font-weight: 700;
+  font-size: 16px;
+  font-family: "Lato", sans-serif;
 }
 .cart__icon,
 .user__icon,
 .menu__icon {
-  font-size: 16px;
+  font-size: 18px;
 }
 /*header*/
 .header {
@@ -232,8 +239,8 @@ input {
   padding: 0.25em 0;
 }
 .logo img {
-  width: 120px;
-  height: 40px;
+  width: 140px;
+  height: 45px;
 }
 .nav__links,
 .nav__menu {
@@ -418,7 +425,7 @@ input {
   width: 100%;
   height: 100%;
   background-image: linear-gradient(180deg, #0084d6 -50%, #000000 100%);
-  opacity: 0.7;
+  opacity: 0.5;
   z-index: 1;
 }
 .hero__content {
@@ -432,12 +439,15 @@ input {
   margin: 0 auto;
 }
 .hero__content h1 {
+  font-family: "Lato", sans-serif;
+  max-width: 600px;
   margin-bottom: 20px;
-  font-size: 60px;
+  font-size: 66px;
 }
 .hero__content h3 {
   font-weight: 700;
   margin-bottom: 40px;
+  font-family: "Lato", sans-serif;
 }
 .cta__btns {
   display: flex;
@@ -445,21 +455,9 @@ input {
   justify-content: start;
   gap: 20px;
 }
-.primary__cta__btn {
-  background-color: #f5f7f9;
-  color: #000000;
-}
-.primary__cta__btn:hover {
-  background-color: #000000;
-  color: #ffffff;
-}
-.secondary__cta__btn {
-  border: 1px solid #f5f7f9;
-  background-color: transparent;
-}
-.secondary__cta__btn:hover {
-  background-color: #f5f7f9;
-  color: #000000;
+.primary__cta__btn a,
+.secondary__cta__btn a {
+  font-family: "Lato", sans-serif;
 }
 @media (max-width: 1024px) {
   .header,
@@ -640,8 +638,7 @@ input {
   max-width: 1200px;
   margin: 0 auto;
 }
-.featured__products__card,
-.products__card {
+.single__products__card {
   width: calc(20% - 0.8em);
   transition: all 0.3s ease;
   margin: 1em 0;
@@ -651,25 +648,25 @@ input {
 .products__card {
   width: calc(25% - 0.8em);
 }
-.featured__products__card a {
+.single__products__card a {
   text-decoration: none;
   color: #000000;
 }
-.featured__products__card__content {
+.single__products__card__content {
   margin-top: 0.75em;
   color: #000;
   text-transform: capitalize;
 }
-.featured__products__card__content h4,
-.featured__products__card__content h5,
-.featured__products__card__content h6 {
+.single__products__card__content h4,
+.single__products__card__content h5,
+.single__products__card__content h6 {
   margin-bottom: 0;
 }
-.featured__products__card__content .category {
+.single__products__card__content .category {
   color: #777;
   font-size: 14px;
 }
-.featured__products__card__content__cart {
+.single__products__card__content__cart {
   position: absolute;
   top: 0.5em;
   right: 0.5em;
@@ -685,7 +682,7 @@ input {
   transition: transform 0.3s ease;
   transform-origin: right;
 }
-.featured__products__card__content__cart__btn {
+.single__products__card__content__cart__btn {
   color: #494949;
   transition: all 0.3s ease;
   display: flex;
@@ -694,14 +691,14 @@ input {
   border-radius: 999px;
   padding: 0.5em;
 }
-.featured__products__card__content__cart__btn:hover {
+.single__products__card__content__cart__btn:hover {
   color: #000000;
   transition: all 0.3s ease;
 }
-.featured__products__card:hover .featured__products__card__content__cart {
+.single__products__card:hover .single__products__card__content__cart {
   transform: scaleX(1);
 }
-.featured__products__card__image img {
+.single__products__card__image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -710,7 +707,7 @@ input {
   .featured__products {
     /* padding: 4em 1.75em; */
   }
-  .featured__products__card {
+  .single__products__card {
     width: calc(25% - 0.75em);
   }
 }
@@ -718,7 +715,7 @@ input {
   .featured__products {
     /* padding: 4em 1.75em; */
   }
-  .featured__products__card {
+  .single__products__card {
     width: calc(33.33% - 0.67em);
   }
 }
@@ -726,12 +723,12 @@ input {
   .featured__products h2 {
     font-size: 24px;
   }
-  .featured__products__card {
+  .single__products__card {
     width: calc(50% - 0.5em);
   }
 }
 @media (max-width: 412px) {
-  .featured__products__card {
+  .single__products__card {
     width: calc(100% - 0em);
   }
 }
@@ -982,18 +979,20 @@ main form select {
   opacity: 0;
   transition: opacity 0.3s ease;
   height: 100vh;
+  transition: all 0.3s ease;
 }
 .cart__drawer__overlay.active {
   opacity: 1;
   cursor: pointer;
   visibility: visible;
   z-index: 999;
+  transition: all 0.3s ease;
 }
 .cart__drawer {
   cursor: auto;
   background-color: #fff;
   width: 450px;
-  height: 100vh;
+  height: 100%;
   position: relative;
   right: -450px;
   transition: all 0.3s ease;
@@ -1011,11 +1010,16 @@ main form select {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.75em;
+  padding: 0.85em 1.25em;
 }
-.cart__drawer__header h4 {
+.cart__drawer__header h5,
+.cart__drawer__subtotal h5,
+.cart__total {
+  font-family: "Lato", sans-serif;
   color: #333;
   margin: 0;
+  font-weight: 500;
+  text-transform: capitalize;
 }
 .cart__drawer__header button {
   display: flex;
@@ -1025,7 +1029,7 @@ main form select {
   border: none;
   cursor: pointer;
   transition: all 0.3s ease;
-  font-size: 16px;
+  font-size: 22px;
   padding: 0;
 }
 .cart__drawer__header button:hover {
@@ -1033,7 +1037,8 @@ main form select {
   transition: all 0.3s ease;
 }
 .cart__drawer__content {
-  height: calc(100vh - 52.8px - 174.38px);
+  flex: 1;
+  /* height: calc(100vh - 52.8px - 174.38px); */
   display: flex;
   flex-direction: column;
   gap: 0.75em;
@@ -1042,18 +1047,15 @@ main form select {
 .cart__drawer__footer {
   width: 100%;
 }
-.cart__drawer__subtotal h4 {
-  margin: 0;
-}
-.cart__total {
-  font-weight: 500;
-}
 .cart__drawer__btns {
   flex-direction: column;
-  gap: 0.35em;
+  gap: 0.5em;
 }
 .cart__drawer__btns button {
   width: 100%;
+}
+.cart__drawer__btns button a {
+  font-family: "Lato", sans-serif;
 }
 .cart__drawer__content__entry {
   display: flex;
@@ -1109,24 +1111,19 @@ main form select {
   margin: 0 auto;
 }
 .cart__content {
-  /* padding: 1em; */
   display: flex;
   flex-direction: column;
-  gap: 0.5em;
-  justify-content: space-between;
+  gap: 0.05em;
   align-items: center;
 }
-.cart__items {
+.cart__item {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   gap: 0.5em;
-  /* align-items: center; */
-  /* justify-content: space-between; */
   width: 100%;
   border: 1px solid #e2e2e2;
 }
 .cart__item__heading {
-  /* padding: 0.75em; */
   background-color: #fff;
   display: flex;
   align-items: center;
@@ -1155,7 +1152,6 @@ p {
   margin-bottom: 0;
 }
 .cart__item {
-  /* padding: 0.75em; */
   border: 1px solid #dddddd;
   display: flex;
   align-items: center;
@@ -1248,6 +1244,7 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: #fff;
 }
 .about__section__content,
 .contact__section__content {
@@ -1255,7 +1252,7 @@ p {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* padding: 3em 2.75em; */
+  margin-top: 0;
 }
 .about__section__info,
 .about__section__img {
@@ -1263,7 +1260,6 @@ p {
 }
 .about__section__info {
   /* padding: 5em 3.75em; */
-  background-color: #fff;
 }
 .about__section__info .heading__border {
   margin: 0;
@@ -1402,4 +1398,20 @@ p {
 }
 .single__product__info__cart .primary__btn {
   max-width: fit-content;
+}
+.cart__table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #dddddd;
+}
+.cart__table tr {
+  width: 100%;
+}
+.cart__table thead td {
+  font-weight: 700;
+}
+.cart__table td {
+  padding: 10px;
+  border-bottom: 1px solid #dddddd;
+  border-right: 1px solid #dddddd;
 }

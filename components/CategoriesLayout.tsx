@@ -6,6 +6,7 @@ import FiltersContainer from "@/components/FiltersContainer";
 import BreadCrumbs from "@/components/Breadcrumbs";
 import ProductCard from "@/components/ProductCard";
 import Pagination from "@/components/Pagination";
+import SingleProductCard from "./SingleProductCard";
 
 const CategoriesLayout = ({
   breadcrumbsPath,
@@ -39,7 +40,7 @@ const CategoriesLayout = ({
           </div>
           <div className="products">
             {currentItems.map((product) => {
-              return <ProductCard key={product.id} {...product} />;
+              return <SingleProductCard key={product.id} {...product} />;
             })}
           </div>
           <Pagination

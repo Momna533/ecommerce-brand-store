@@ -11,7 +11,7 @@ const Page: FC = () => {
       <Header />
       <AboutHero />
       <div className="about__section">
-        <div className="about__section__content">
+        <div className="about__section__content container">
           <div className="about__section__info">
             <div className="heading__border"></div>
             <h2>Who We Are</h2>

@@ -1,10 +1,10 @@
 import { FC } from "react";
 import Link from "next/link";
-import { FaCartShopping } from "react-icons/fa6";
+import { FaCartPlus, FaCartShopping } from "react-icons/fa6";
 import Image from "next/image";
 import { useGlobalContext } from "@/context/Context";
 const ProductCard: FC = ({ id, title, img, category, price }) => {
-  const { handleAddToCart } = useGlobalContext();
+  const { handleAddToCart, inCart, setInCart } = useGlobalContext();
   return (
     <div className="featured__products__card products__card">
       <Link href={`/${category}/${id}`}>
@@ -23,9 +23,11 @@ const ProductCard: FC = ({ id, title, img, category, price }) => {
         <div className="featured__products__card__content__cart">
           <button
             className="featured__products__card__content__cart__btn"
-            onClick={() => handleAddToCart(id)}
+            onClick={() => {
+              handleAddToCart(id);
+            }}
           >
-            <FaCartShopping />
+            {inCart ? <FaCartPlus /> : <FaCartShopping />}
           </button>
         </div>
       </div>

@@ -21,6 +21,7 @@ const Header = () => {
     isRoutePage,
     setIsRoutePage,
     mobileDrawerOpen,
+    numberOfCartItems,
   } = useGlobalContext();
 
   const path = usePathname();
@@ -144,7 +145,12 @@ const Header = () => {
                 }}
               >
                 <div className="cart__amount">$0.00</div>
-                <FaCartShopping className="cart__icon" />
+                <div className="relative">
+                  <FaCartShopping className="cart__icon" />
+                  <div className="absolute top-[-16px] right-[-10px] bg-white text-black border-white rounded-full flex items-center justify-center py-0.5 px-1.5 text-xs">
+                    {numberOfCartItems}
+                  </div>
+                </div>
               </button>
               <Link className="nav__link home__user__link" href="/">
                 <FaUser className="user__icon" />
