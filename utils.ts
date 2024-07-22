@@ -34,8 +34,7 @@ export const data = [
       id: 1,
       img: sportsShoe3,
       title: "dnk yellow shoes",
-      price: "$120.00",
-      category: "men",
+      price: "120.00", category: "men",
       featured: true,
       inCart:false,
       amount:1
@@ -45,7 +44,7 @@ export const data = [
       id: 2,
       img: sportsShoe1,
       title: "dnk blue shoes",
-      price: "$200.00-$240.00",
+      price: "200.00",
       category: "men",
       featured: true,
       inCart:false,
@@ -56,8 +55,8 @@ export const data = [
       id: 3,
       img: productMJeans1,
       title: "Dark brown jeans",
-      price: "$150.00",
-      category: "men",
+      price: "150.00",
+       category: "men",
       featured: true,
       inCart:false,
       amount:1
@@ -67,8 +66,8 @@ export const data = [
       id: 4,
       img: productWJeans2,
       title: "Blue denim jeans",
-      price: "$150.00",
-      category: "women",
+      price: "150.00",
+       category: "women",
       featured: true,
       inCart:false,
       amount:1
@@ -78,8 +77,8 @@ export const data = [
       id: 5,
       img: productWJeans4,
       title: "Basic grey jeans",
-      price: "$150.00",
-      category: "men",
+      price: "150.00",
+       category: "men",
       featured: true,
       inCart:false,
       amount:1
@@ -89,8 +88,8 @@ export const data = [
       id: 6,
       img: productWJeans1,
       title: "Blue denim shorts",
-      price: "$130.00",
-      category: "women",
+      price: "130.00",
+       category: "women",
       featured: true,
       inCart:false,
       amount:1
@@ -100,8 +99,8 @@ export const data = [
       id: 7,
       img: productAccessory2,
       title: "Anchor braceet",
-      price: "$150.00-$180.00",
-      category: "accessories",
+      price: "150.00",
+       category: "accessories",
       featured: true,
       inCart:false,
       amount:1
@@ -111,8 +110,8 @@ export const data = [
       id: 8,
       img: productAccessory1,
       title: "boho bangle braceet",
-      price: "$150.00-$170.00",
-      category: "accessories",
+      price: "150.00",
+       category: "accessories",
       featured: true,
       inCart:false,
       amount:1
@@ -122,8 +121,8 @@ export const data = [
       id: 9,
       img: productBag1,
       title: "light brown purse",
-      price: "$150.00",
-      category: "accessories",
+      price: "150.00",
+       category: "accessories",
       featured: true,
       inCart:false,
       amount:1
@@ -133,8 +132,8 @@ export const data = [
       id: 10,
       img: productBag3,
       title: "Bright red bag",
-      price: "$100.00-$140.00",
-      category: "accessories",
+      price: "100.00",
+       category: "accessories",
       featured: true,
       inCart:false,
       amount:1
@@ -144,7 +143,7 @@ export const data = [
       id: 11,
       img: productAccessory2,
       title: "Anchor Bracelet",
-      price: "$100.00-$140.00",
+      price: "100.00",
       category: "accessories",
       featured: false
       ,
@@ -155,7 +154,7 @@ export const data = [
       id: 12,
       img: productWJeans4,
       title: "Basic grey jeans",
-      price: "$100.00-$140.00",
+      price: "100.00",
       category: "women",
       featured: false
       ,
@@ -166,7 +165,7 @@ export const data = [
       id: 13,
       img: productHoodie1,
       title: "Black Hoodie",
-      price: "$100.00-$140.00",
+      price: "100.00",
       category: "men",
       featured: false
       ,
@@ -177,10 +176,9 @@ export const data = [
       id: 14,
       img: productBag2,
       title: "Black over-the-shoulder handbag",
-      price: "$100.00-$140.00",
+      price: "100.00",
       category: "accessories",
-      featured: false
-      ,
+      featured: false,
       inCart:false,
       amount:1
     },
@@ -188,10 +186,9 @@ export const data = [
       id: 15,
       img: productHoodie2,
       title: "Blue Hoodie",
-      price: "$100.00-$140.00",
+      price: "100.00",
       category: "men",
-      featured: false
-      ,
+      featured: false,
       inCart:false,
       amount:1
     },
@@ -199,10 +196,9 @@ export const data = [
       id: 16,
       img: tshirt4,
       title: "DNK Blue TShirt",
-      price: "$40.00",
+      price: "40.00",
       category: "men",
-      featured: false
-      ,
+      featured: false,
       inCart:false,
       amount:1
     },
@@ -210,10 +206,9 @@ export const data = [
       id: 17,
       img: productBag4,
       title: "Bright gold purse with chain",
-      price: "$150.00",
-      category: "accessories",
-      featured: false
-      ,
+      price: "150.00",
+       category: "accessories",
+      featured: false,
       inCart:false,
       amount:1
     },
@@ -221,10 +216,9 @@ export const data = [
       id: 18,
       img: productAccessory3,
       title: "Buddha Bracelet",
-      price: "$150.00",
-      category: "accessories",
-      featured: false
-      ,
+      price: "150.00",
+       category: "accessories",
+      featured: false,
       inCart:false,
       amount:1
     },
@@ -232,10 +226,9 @@ export const data = [
       id: 19,
       img: productMjeans2,
       title: "Dark blue denim jeans",
-      price: "$150.00",
-      category: "men",
-      featured: false
-      ,
+      price: "150.00",
+       category: "men",
+      featured: false,
       inCart:false,
       amount:1
     },
@@ -243,10 +236,9 @@ export const data = [
       id: 20,
       img: productMJeans4,
       title: "Dark grey jeans",
-      price: "$150.00",
-      category: "men",
-      featured: false
-      ,
+      price: "150.00",
+       category: "men",
+      featured: false,
       inCart:false,
       amount:1
     },
@@ -254,7 +246,7 @@ export const data = [
       id: 21,
       img: sportsShoe1,
       title: "dnk black shoes",
-      price: "$200.00-$240.00",
+      price: "200.00",
       category: "women",
       featured: false
       ,
@@ -265,7 +257,7 @@ export const data = [
       id: 22,
       img: sportsShoe2,
       title: "dnk blue shoes",
-      price: "$200.00-$240.00",
+      price: "200.00",
       category: "men",
       featured: false
       ,
@@ -276,7 +268,7 @@ export const data = [
       id: 23,
       img: sportsShoe3,
       title: "dnk green shoes",
-      price: "$200.00-$240.00",
+      price: "200.00",
       category: "women",
       featured: false
       ,
@@ -287,7 +279,7 @@ export const data = [
       id: 24,
       img: sportsShoe4,
       title: "dnk red shoes",
-      price: "$200.00-$240.00",
+      price: "200.00",
       category: "men",
       featured: false
       ,
@@ -298,10 +290,9 @@ export const data = [
       id: 25,
       img: sportsShoe5,
       title: "dnk yellow shoes",
-      price: "$200.00-$240.00",
+      price: "200.00",
       category: "men",
-      featured: false
-      ,
+      featured: false,
       inCart:false,
       amount:1
     },
@@ -309,10 +300,9 @@ export const data = [
       id: 26,
       img: tshirt1,
       title: "DNK Green TShirt",
-      price: "$40.00",
+      price: "40.00",
       category: "men",
-      featured: false
-      ,
+      featured: false,
       inCart:false,
       amount:1
     },
@@ -320,10 +310,9 @@ export const data = [
       id: 27,
       img: tshirt2,
       title: "Flammingo tshirt",
-      price: "$40.00",
+      price: "40.00",
       category: "women",
-      featured: false
-      ,
+      featured: false,
       inCart:false,
       amount:1
     },
@@ -331,7 +320,7 @@ export const data = [
       id: 28,
       img: tshirt3,
       title: "Grey Pattern tshirt",
-      price: "$40.00",
+      price: "40.00",
       category: "women",
       featured: false
       ,
@@ -342,10 +331,9 @@ export const data = [
       id: 29,
       img: productMJeans3,
       title: "Faint washed Blue denim jeans",
-      price: "$150.00",
-      category: "women",
-      featured: false
-      ,
+      price: "150.00",
+       category: "women",
+      featured: false,
       inCart:false,
       amount:1
     },
@@ -353,7 +341,7 @@ export const data = [
       id: 30,
       img: productHoodie3,
       title: "Green Hoodie",
-      price: "$100.00-$140.00",
+      price: "100.00",
       category: "women",
       featured: false
       ,
@@ -364,7 +352,7 @@ export const data = [
       id: 31,
       img: productHoodie4,
       title: "Red Hoodie",
-      price: "$100.00-$140.00",
+      price: "100.00",
       category: "men",
       featured: false
       ,
@@ -375,7 +363,7 @@ export const data = [
       id: 32,
       img: tshirt7,
       title: "lemon tshirt",
-      price: "$100.00-$140.00",
+      price: "100.00",
       category: "women",
       featured: false
       ,
@@ -386,7 +374,7 @@ export const data = [
       id: 33,
       img: tshirt7,
       title: "light brown purse",
-      price: "$100.00-$140.00",
+      price: "100.00",
       category: "accessories",
       featured: false
       ,

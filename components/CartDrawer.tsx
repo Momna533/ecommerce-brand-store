@@ -5,14 +5,15 @@ import PrimaryBtn from "./PrimaryBtn";
 import { CgClose } from "react-icons/cg";
 import Image from "next/image";
 import { useGlobalContext } from "@/context/Context";
+import Link from "next/link";
 
 const CartDrawer: FC = () => {
   const {
-    amount,
-    setAmount,
     cartDrawerOpen,
     setCartDrawerOpen,
     cartItems,
+    cartTotal,
+
     handleRemoveFromCart,
   } = useGlobalContext();
 
@@ -39,11 +40,15 @@ const CartDrawer: FC = () => {
           <div className="cart__drawer__content overflow-auto flex-1">
             {cartItems.length > 0 ? (
               cartItems.map((item) => {
-                const { id, title, img, price } = item;
+                const { id, title, img, price, amount } = item;
                 return (
                   <>
                     <div className="cart__drawer__content__entry" key={id}>
-                      <div className="cart__drawer__content__entry__left">
+                      <Link
+                        className="cart__drawer__content__entry__left"
+                        href={`${id}`}
+                        onClick={() => setCartDrawerOpen(false)}
+                      >
                         <div className="cart__drawer__content__entry__img">
                           <Image src={img} alt={title} />
                         </div>
@@ -54,7 +59,7 @@ const CartDrawer: FC = () => {
                             <div className="price">{price}</div>
                           </span>
                         </div>
-                      </div>
+                      </Link>
                       <div className="cart__drawer__content__entry__right">
                         <button onClick={() => handleRemoveFromCart(id)}>
                           <CgClose />
@@ -76,7 +81,7 @@ const CartDrawer: FC = () => {
             <div className="divider"></div>
             <div className="cart__drawer__subtotal">
               <h5>Subtotal</h5>
-              <div className="cart__total">$150.00</div>
+              <div className="cart__total">${cartTotal}</div>
             </div>
             <div className="divider"></div>
             <div className="cart__drawer__btns">

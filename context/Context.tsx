@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { data } from "@/utils";
 
 const AppContext = React.createContext();
@@ -14,25 +14,37 @@ const AppProvider = ({ children }) => {
   const [mobileDrawerOpen, setMobileDrawerOpen] = useState(false);
   const [isHomePage, setIsHomePage] = useState(true);
   const [isRoutePage, setIsRoutePage] = useState(false);
-  const [amount, setAmount] = useState(0);
-  const [numberOfCartItems, setNumberOfCartItems] = useState(0);
+  const [cartTotal, setCartTotal] = useState(0);
 
   const handleAddToCart = (productId) => {
-    setProducts((prev) =>
-      prev.map((product) =>
-        product.id === productId ? { ...product, inCart: true } : product
+    const product = products.find((item) => item.id === productId);
+    setProducts((prevProducts) =>
+      prevProducts.map((prevProduct) =>
+        prevProduct.id === productId
+          ? { ...prevProduct, inCart: true }
+          : prevProduct
       )
     );
-
-    const itemAddedToCart = products.find((p) => p.id === productId);
-    const itemAleadyInCart = products.some((p) => p.id === productId);
-    if (itemAleadyInCart) {
-      console.log("Item already in cart");
-    }
-    setCartItems((prev) => {
-      return [...prev, itemAddedToCart];
+    setCartItems((prevCartItems) => {
+      const itemAlreadyInCart = prevCartItems.find(
+        (item) => item.id === productId
+      );
+      if (itemAlreadyInCart) {
+        return prevCartItems.map((item) =>
+          item.id === productId ? { ...item, amount: item.amount + 1 } : item
+        );
+      } else {
+        return [...prevCartItems, { ...product, amount: 1 }];
+      }
     });
   };
+
+  useEffect(() => {
+    const newCartTotal = cartItems.reduce((acc, cartItem) => {
+      return acc + cartItem.price * cartItem.amount;
+    }, 0);
+    setCartTotal(newCartTotal);
+  }, [cartItems]);
 
   const handleRemoveFromCart = (productId) => {
     setProducts((prev) =>
@@ -61,10 +73,9 @@ const AppProvider = ({ children }) => {
         setIsHomePage,
         isRoutePage,
         setIsRoutePage,
-        amount,
-        setAmount,
         setCartItems,
-        numberOfCartItems,
+        cartTotal,
+        setCartTotal,
         handleAddToCart,
         handleRemoveFromCart,
       }}
