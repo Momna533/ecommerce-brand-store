@@ -10,7 +10,7 @@ const AppProvider = ({ children }) => {
   const [products, setProducts] = useState(data);
   const [cartItems, setCartItems] = useState([]);
   const [featuredItems, setFeaturedItems] = useState(featured);
-  const [cartDrawerOpen, setCartDrawerOpen] = useState(false);
+  const [cartDrawerOpen, setCartDrawerOpen] = useState(true);
   const [mobileDrawerOpen, setMobileDrawerOpen] = useState(false);
   const [isHomePage, setIsHomePage] = useState(true);
   const [isRoutePage, setIsRoutePage] = useState(false);
