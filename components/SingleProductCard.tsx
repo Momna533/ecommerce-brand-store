@@ -5,9 +5,12 @@ import { FaShoppingBag } from "react-icons/fa";
 import { FaCartShopping } from "react-icons/fa6";
 
 const SingleProductCard = ({ id, img, title, price, category, inCart }) => {
-  const { handleAddToCart } = useGlobalContext();
+  const { setCartDrawerOpen, handleAddToCart } = useGlobalContext();
   return (
-    <div className="single__products__card">
+    <div
+      className="single__products__card"
+      onClick={() => setCartDrawerOpen(true)}
+    >
       <Link href={`/${id}`}>
         <div className="single__products__card__image">
           <Image src={img} alt="product" />
