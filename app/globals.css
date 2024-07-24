@@ -38,7 +38,8 @@ h4,
 h5,
 h6 {
   font-weight: 600;
-  margin-bottom: 1rem;
+  margin-bottom: 0;
+  font-family: "Lato", sans-serif;
 }
 h1 {
   font-size: 36px;
@@ -963,147 +964,6 @@ main form select {
   .products__card {
     width: 100%;
   }
-}
-/*cart drawer*/
-.cart__drawer__overlay {
-  background-color: rgba(0, 0, 0, 0.4);
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  display: flex;
-  align-items: start;
-  justify-content: right;
-  visibility: hidden;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  height: 100vh;
-  transition: all 0.3s ease;
-}
-.cart__drawer__overlay.active {
-  opacity: 1;
-  cursor: pointer;
-  visibility: visible;
-  z-index: 999;
-  transition: all 0.3s ease;
-}
-.cart__drawer {
-  cursor: auto;
-  background-color: #fff;
-  width: 450px;
-  height: 100%;
-  position: relative;
-  right: -450px;
-  transition: all 0.3s ease;
-  z-index: 999;
-  display: flex;
-  flex-direction: column;
-}
-.cart__drawer.active {
-  right: 0;
-  transition: all 0.3s ease;
-}
-.cart__drawer__header,
-.cart__drawer__subtotal,
-.cart__drawer__btns {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0.85em 1.25em;
-}
-.cart__drawer__header h5,
-.cart__drawer__subtotal h5,
-.cart__total {
-  font-family: "Lato", sans-serif;
-  color: #333;
-  margin: 0;
-  font-weight: 500;
-  text-transform: capitalize;
-}
-.cart__drawer__header button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  font-size: 22px;
-  padding: 0;
-}
-.cart__drawer__header button:hover {
-  color: #0084d6;
-  transition: all 0.3s ease;
-}
-.cart__drawer__content {
-  flex: 1;
-  /* height: calc(100vh - 52.8px - 174.38px); */
-  display: flex;
-  flex-direction: column;
-  gap: 0.75em;
-  padding: 0.75em;
-}
-.cart__drawer__footer {
-  width: 100%;
-}
-.cart__drawer__btns {
-  flex-direction: column;
-  gap: 0.5em;
-}
-.cart__drawer__btns button {
-  width: 100%;
-}
-.cart__drawer__btns button a {
-  font-family: "Lato", sans-serif;
-}
-.cart__drawer__content__entry {
-  display: flex;
-  align-items: center;
-  gap: 0.5em;
-  justify-content: space-between;
-  width: 100%;
-}
-.cart__drawer__content__entry__left {
-  display: flex;
-  align-items: center;
-  gap: 0.5em;
-}
-.cart__drawer__content__entry__img img {
-  width: 70px;
-  height: 70px;
-  object-fit: cover;
-}
-.cart__drawer__content__entry__info h5 {
-  margin: 0;
-}
-.cart__drawer__content__entry__info span {
-  display: flex;
-  align-items: center;
-  gap: 0.25em;
-  color: #000;
-}
-.cart__drawer__content__entry__right button {
-  border: 1px solid #666;
-  background-color: transparent;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  border-radius: 999px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.25em;
-}
-.cart__drawer__content__entry__right button svg {
-  color: #666;
-}
-.cart__drawer__content__entry__right button:hover {
-  border-color: #000;
-  transition: all 0.3s ease;
-}
-.cart__drawer__content__entry__right button:hover svg {
-  color: #000;
-  transition: all 0.3s ease;
 }
 /*cart*/
 .cart {
