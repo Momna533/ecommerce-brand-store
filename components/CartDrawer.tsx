@@ -4,16 +4,18 @@ import { FC } from "react";
 import PrimaryBtn from "./PrimaryBtn";
 import { CgClose } from "react-icons/cg";
 import Image from "next/image";
-import { useGlobalContext } from "@/context/Context";
 import Link from "next/link";
+import { useDispatch, useSelector } from "react-redux";
+import { removeFromCart, setCartDrawerOpen } from "@/redux/appSlice";
+import { useGlobalContext } from "@/context/Context";
 
 const CartDrawer: FC = () => {
   const {
     cartDrawerOpen,
-    setCartDrawerOpen,
     cartItems,
     cartTotal,
     handleRemoveFromCart,
+    handleCartDrawerOpen,
   } = useGlobalContext();
 
   return (
@@ -21,7 +23,7 @@ const CartDrawer: FC = () => {
       className={`bg-[#00000080] fixed top-0 right-0 bottom-0 left-0 h-[100vh] flex items-start justify-end transition-opacity z-50 ${
         cartDrawerOpen ? "flex opacity-1 visible" : "opacity-0 hidden"
       }`}
-      onClick={() => setCartDrawerOpen(false)}
+      onClick={() => handleCartDrawerOpen(!cartDrawerOpen)}
     >
       <div
         className={`bg-white w-[450px] h-full relative flex flex-col transition-all z-50 ${
@@ -32,7 +34,7 @@ const CartDrawer: FC = () => {
         <div className="absolute w-full flex items-center justify-between p-4">
           <h5 className="text-[#333] capitalize font-bold">Shopping cart</h5>
           <button
-            onClick={() => setCartDrawerOpen(false)}
+            onClick={() => handleCartDrawerOpen(!cartDrawerOpen)}
             className="p-0 text-xl"
           >
             <CgClose />
@@ -53,7 +55,7 @@ const CartDrawer: FC = () => {
                       <Link
                         className="flex items-center gap-[0.5em]"
                         href={`${id}`}
-                        onClick={() => setCartDrawerOpen(false)}
+                        onClick={() => handleCartDrawerOpen(!cartDrawerOpen)}
                       >
                         <div>
                           <Image
@@ -105,14 +107,14 @@ const CartDrawer: FC = () => {
                 title="view cart"
                 varient="link"
                 to="/cart"
-                onClick={() => setCartDrawerOpen(false)}
+                onClick={() => handleCartDrawerOpen(!cartDrawerOpen)}
               />
               {cartItems.length > 0 && (
                 <PrimaryBtn
                   title="checkout"
                   varient="link"
                   to="/cart"
-                  onClick={() => setCartDrawerOpen(false)}
+                  onClick={() => handleCartDrawerOpen(!cartDrawerOpen)}
                 />
               )}
             </div>

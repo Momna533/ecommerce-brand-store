@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useGlobalContext } from "@/context/Context";
+import { useSelector } from "react-redux";
 
 const page = () => {
   const pathname = usePathname();

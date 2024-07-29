@@ -5,6 +5,7 @@ import CategoriesLayout from "@/components/CategoriesLayout";
 import { usePathname } from "next/navigation";
 import React from "react";
 import { useGlobalContext } from "@/context/Context";
+import { useSelector } from "react-redux";
 
 const page = () => {
   const pathname = usePathname();

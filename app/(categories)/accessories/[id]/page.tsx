@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import { useSelector } from "react-redux";
 import { useGlobalContext } from "@/context/Context";
 
 const page = () => {

@@ -4,6 +4,7 @@ import { data } from "@/utils";
 import FeaturedProduct from "./FeaturedProduct";
 import { useGlobalContext } from "@/context/Context";
 import SingleProductCard from "./SingleProductCard";
+import { useSelector } from "react-redux";
 
 const FeaturedProducts = () => {
   const { products } = useGlobalContext();
